@@ -23,10 +23,6 @@ extension UIScrollView {
     }
     
     func addSeasonalRefresh(season: Season, action: ()->()) {
-//        if self.seasonalRefresh != nil {
-//            self.removeSeasonalRefresh(seasonalRefresh!)
-//        }
-        
         self.seasonalRefresh = SeasonalRefresh(season: season)
         self.seasonalRefresh?.refreshView.delegate = seasonalRefresh
         self.seasonalRefresh!.scrollView = self
@@ -37,18 +33,5 @@ extension UIScrollView {
         view.backgroundColor = UIColor.redColor()
         view.tag = seasonalRefreshViewTag
         self.addSubview(view)
-    }
-    
-    func removeSeasonalRefresh(seasonalRefresh: SeasonalRefresh) {
-        self.seasonalRefresh?.refreshView.removeFromSuperview()
-        self.seasonalRefresh = nil
-    }
-    
-    func startRefreshing() {
-        seasonalRefresh?.startRefreshing()
-    }
-    
-    func endRefreshing() {
-        seasonalRefresh?.endRefreshing()
     }
 }
