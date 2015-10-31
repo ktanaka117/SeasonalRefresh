@@ -10,12 +10,12 @@ import UIKit
 
 let heightOfSeasonalRefreshView: CGFloat = 200
 
-protocol SeasonalRefreshViewDelegate {
+protocol SeasonalRefreshViewDelegate: class {
     func seasonalRefreshViewWillMoveToSuperView(newSuperView: UIView?)
 }
 
 class SeasonalRefreshView: UIView {
-    var delegate: SeasonalRefreshViewDelegate?
+    weak var delegate: SeasonalRefreshViewDelegate?
     
     override func willMoveToSuperview(newSuperview: UIView?) {
         delegate?.seasonalRefreshViewWillMoveToSuperView(newSuperview)

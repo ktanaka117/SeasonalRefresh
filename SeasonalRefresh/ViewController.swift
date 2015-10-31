@@ -17,7 +17,7 @@ class ViewController: UITableViewController {
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
-        tableView.addSeasonalRefresh(.Halloween, action: {
+        tableView.addSeasonalRefresh(.Halloween, action: { [weak self] in
             
         })
     }
