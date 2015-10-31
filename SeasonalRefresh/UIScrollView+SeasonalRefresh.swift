@@ -6,4 +6,39 @@
 //  Copyright © 2015年 田中賢治. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIScrollView {
+    var seasonalRefresh: SeasonalRefresh? {
+        get { return self.seasonalRefresh }
+        set(newValue) { self.seasonalRefresh = newValue }
+    }
+    
+    func addSeasonalRefresh(seasonalRefresh: SeasonalRefresh, action: ()->()) {
+        if self.seasonalRefresh != nil {
+            self.removeSeasonalRefresh(seasonalRefresh)
+        }
+        
+        self.seasonalRefresh = seasonalRefresh
+        self.seasonalRefresh?.scrollView = self
+        self.seasonalRefresh?.action = action
+        
+        let view = seasonalRefresh.refreshView
+        view?.frame = CGRectMake(0, -view!.frame.size.height, self.frame.size.width, view!.frame.size.height)
+        self.addSubview(view!)
+        self.sendSubviewToBack(view!)
+    }
+    
+    func removeSeasonalRefresh(seasonalRefresh: SeasonalRefresh) {
+        self.seasonalRefresh?.refreshView?.removeFromSuperview()
+        self.seasonalRefresh = nil
+    }
+    
+    func startRefreshing() {
+        seasonalRefresh?.startRefreshing()
+    }
+    
+    func endRefreshing() {
+        seasonalRefresh?.endRefreshing()
+    }
+}
