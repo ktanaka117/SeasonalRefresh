@@ -16,6 +16,10 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        tableView.addSeasonalRefresh(.Halloween, action: {
+            
+        })
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

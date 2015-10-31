@@ -21,8 +21,13 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     weak var scrollView: UIScrollView?
     
     var refreshView: SeasonalRefreshView?
+    var type: Season!
     
     var action: (()->())?
+    
+    init(season: Season) {
+        self.season = season
+    }
     
     func startRefreshing() {
         
