@@ -6,4 +6,8 @@
 //  Copyright © 2015年 田中賢治. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class SeasonalRefreshView: UIView {
+    
+}

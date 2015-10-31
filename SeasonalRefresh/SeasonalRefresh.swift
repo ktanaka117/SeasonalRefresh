@@ -21,7 +21,7 @@ class SeasonalRefresh: NSObject {
     var delegate: SeasonalRefreshDelegate?
     weak var scrollView: UIScrollView?
     
-    var refreshView: UIView?
+    var refreshView: SeasonalRefreshView?
     
     var action: (()->())?
     
