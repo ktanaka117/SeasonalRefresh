@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29567EF21BE485700011BDB0 /* UIScrollView+SeasonalRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567EF11BE485700011BDB0 /* UIScrollView+SeasonalRefresh.swift */; settings = {ASSET_TAGS = (); }; };
+		29567EF41BE48ABD0011BDB0 /* SeasonalRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567EF31BE48ABD0011BDB0 /* SeasonalRefreshView.swift */; settings = {ASSET_TAGS = (); }; };
 		29FD7C2A1BE45AE400D0B29D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FD7C291BE45AE400D0B29D /* AppDelegate.swift */; };
 		29FD7C2C1BE45AE400D0B29D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FD7C2B1BE45AE400D0B29D /* ViewController.swift */; };
 		29FD7C2F1BE45AE400D0B29D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FD7C2D1BE45AE400D0B29D /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		29567EF11BE485700011BDB0 /* UIScrollView+SeasonalRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+SeasonalRefresh.swift"; sourceTree = "<group>"; };
+		29567EF31BE48ABD0011BDB0 /* SeasonalRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonalRefreshView.swift; sourceTree = "<group>"; };
 		29FD7C261BE45AE400D0B29D /* SeasonalRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeasonalRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FD7C291BE45AE400D0B29D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29FD7C2B1BE45AE400D0B29D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				29FD7C2B1BE45AE400D0B29D /* ViewController.swift */,
 				29567EF11BE485700011BDB0 /* UIScrollView+SeasonalRefresh.swift */,
 				29FD7C591BE46B7500D0B29D /* SeasonalRefresh.swift */,
+				29567EF31BE48ABD0011BDB0 /* SeasonalRefreshView.swift */,
 				29FD7C2D1BE45AE400D0B29D /* Main.storyboard */,
 				29FD7C301BE45AE400D0B29D /* Assets.xcassets */,
 				29FD7C321BE45AE400D0B29D /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				29FD7C2C1BE45AE400D0B29D /* ViewController.swift in Sources */,
 				29567EF21BE485700011BDB0 /* UIScrollView+SeasonalRefresh.swift in Sources */,
+				29567EF41BE48ABD0011BDB0 /* SeasonalRefreshView.swift in Sources */,
 				29FD7C5A1BE46B7500D0B29D /* SeasonalRefresh.swift in Sources */,
 				29FD7C2A1BE45AE400D0B29D /* AppDelegate.swift in Sources */,
 			);
