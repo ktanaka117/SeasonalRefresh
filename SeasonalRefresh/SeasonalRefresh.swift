@@ -87,10 +87,13 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
             }
             
             if seasonalY - offsetY > 0 {
-                scrollView.contentOffset.y = 0
-                refreshView.backgroundColor = UIColor.lightGrayColor()
+                UIView.animateWithDuration(0.2, animations: {
+                    scrollView.contentOffset.y = 0
+                })
                 scrollView.scrollEnabled = false
                 scrollView.scrollEnabled = true
+                stage = .One
+                refreshView.backgroundColor = UIColor.lightGrayColor()
             }
         }
     }
