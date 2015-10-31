@@ -41,8 +41,10 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
         if let seasonalRefreshView = scrollView.viewWithTag(seasonalRefreshViewTag) {
             seasonalRefreshView.frame.origin.y = -200
             
-            if seasonalRefreshView.frame.origin.y > 0 {
-                seasonalRefreshView.frame.origin.y = 0
+            if seasonalRefreshView.frame.origin.y - scrollView.contentOffset.y > 0 {
+                scrollView.contentOffset.y = 0
+                scrollView.scrollEnabled = false
+                scrollView.scrollEnabled = true
             }
         }
     }
