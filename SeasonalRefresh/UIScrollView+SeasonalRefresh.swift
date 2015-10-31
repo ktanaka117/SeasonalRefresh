@@ -10,6 +10,7 @@ import UIKit
 import ObjectiveC
 
 private var associatedObjectHandle: UInt8 = 0
+let seasonalRefreshViewTag = 98789
 
 extension UIScrollView {
     private var seasonalRefresh: SeasonalRefresh? {
