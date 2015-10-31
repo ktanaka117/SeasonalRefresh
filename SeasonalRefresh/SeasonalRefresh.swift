@@ -23,6 +23,10 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     var refreshView: SeasonalRefreshView = SeasonalRefreshView()
     var type: Season = .Halloween
     
+    let maxStage = 6
+    let numberOfUpStage: CGFloat = heightOfSeasonalRefreshView/6
+    var stage = 1
+    
     var action: (()->())?
     
     init(season: Season) {
@@ -39,13 +43,43 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if let seasonalRefreshView = scrollView.viewWithTag(seasonalRefreshViewTag) {
-            seasonalRefreshView.frame.origin.y = -200
+            seasonalRefreshView.frame.origin.y = -heightOfSeasonalRefreshView
             
-            if seasonalRefreshView.frame.origin.y - scrollView.contentOffset.y > 0 {
+            let seasonalY = seasonalRefreshView.frame.origin.y
+            let offsetY = scrollView.contentOffset.y
+            
+            if seasonalY - offsetY > seasonalY + numberOfUpStage && stage == 1 {
+                print("Stage 1")
+                stage++
+            }
+            if seasonalY - offsetY > seasonalY + numberOfUpStage*2 && stage == 2 {
+                print("Stage 2")
+                stage++
+            }
+            if seasonalY - offsetY > seasonalY + numberOfUpStage*3 && stage == 3 {
+                print("Stage 3")
+                stage++
+            }
+            if seasonalY - offsetY > seasonalY + numberOfUpStage*4 && stage == 4 {
+                print("Stage 4")
+                stage++
+            }
+            if seasonalY - offsetY > seasonalY + numberOfUpStage*5 && stage == 5 {
+                print("Stage 5")
+                stage++
+            }
+            if seasonalY - offsetY > seasonalY + numberOfUpStage*6 && stage == 6 {
+                print("Stage 6")
+                stage = 1
+            }
+            
+            if seasonalY - offsetY > 0 {
                 scrollView.contentOffset.y = 0
                 scrollView.scrollEnabled = false
                 scrollView.scrollEnabled = true
             }
+            
+            print(offsetY)
         }
     }
     

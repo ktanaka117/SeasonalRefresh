@@ -29,7 +29,7 @@ extension UIScrollView {
         self.seasonalRefresh!.action = action
         
         let view = seasonalRefresh!.refreshView
-        view.frame = CGRectMake(0, 0, self.frame.size.width, 200)
+        view.frame = CGRectMake(0, 0, self.frame.size.width, heightOfSeasonalRefreshView)
         view.backgroundColor = UIColor.redColor()
         view.tag = seasonalRefreshViewTag
         self.addSubview(view)
