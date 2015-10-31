@@ -12,6 +12,7 @@
 		29FD7C2F1BE45AE400D0B29D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FD7C2D1BE45AE400D0B29D /* Main.storyboard */; };
 		29FD7C311BE45AE400D0B29D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FD7C301BE45AE400D0B29D /* Assets.xcassets */; };
 		29FD7C341BE45AE400D0B29D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FD7C321BE45AE400D0B29D /* LaunchScreen.storyboard */; };
+		29FD7C5A1BE46B7500D0B29D /* SeasonalRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FD7C591BE46B7500D0B29D /* SeasonalRefresh.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		29FD7C301BE45AE400D0B29D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29FD7C331BE45AE400D0B29D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29FD7C351BE45AE400D0B29D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29FD7C591BE46B7500D0B29D /* SeasonalRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonalRefresh.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				29FD7C291BE45AE400D0B29D /* AppDelegate.swift */,
 				29FD7C2B1BE45AE400D0B29D /* ViewController.swift */,
+				29FD7C591BE46B7500D0B29D /* SeasonalRefresh.swift */,
 				29FD7C2D1BE45AE400D0B29D /* Main.storyboard */,
 				29FD7C301BE45AE400D0B29D /* Assets.xcassets */,
 				29FD7C321BE45AE400D0B29D /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29FD7C2C1BE45AE400D0B29D /* ViewController.swift in Sources */,
+				29FD7C5A1BE46B7500D0B29D /* SeasonalRefresh.swift in Sources */,
 				29FD7C2A1BE45AE400D0B29D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +251,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeasonalRefresh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ktanaka.SeasonalRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,6 +263,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeasonalRefresh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ktanaka.SeasonalRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
