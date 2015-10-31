@@ -12,13 +12,10 @@ enum Season {
     case Halloween, Christmas, NewYear, Valentine
 }
 
-protocol SeasonalRefreshDelegate {
-    
-}
 
 class SeasonalRefresh: NSObject {
     var season: Season?
-    var delegate: SeasonalRefreshDelegate?
+    
     weak var scrollView: UIScrollView?
     
     var refreshView: SeasonalRefreshView?
