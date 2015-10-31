@@ -12,6 +12,10 @@ enum Season {
     case Halloween, Christmas, NewYear, Valentine
 }
 
+enum SeasonalRefreshStage {
+    case One, Two, Three, Four, Five, Six
+}
+
 private var KVOContext = "RefresherKVOContext"
 private let ContentOffsetKeyPath = "contentOffset"
 
@@ -25,7 +29,7 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     
     let maxStage = 6
     let numberOfUpStage: CGFloat = heightOfSeasonalRefreshView/6
-    var stage = 1
+    var stage: SeasonalRefreshStage = .One
     
     var action: (()->())?
     
@@ -48,38 +52,46 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
             let seasonalY = seasonalRefreshView.frame.origin.y
             let offsetY = scrollView.contentOffset.y
             
-            if seasonalY - offsetY > seasonalY + numberOfUpStage && stage == 1 {
-                print("Stage 1")
-                stage++
+            if -offsetY > 0 && -offsetY < numberOfUpStage {
+                stage = .One
             }
-            if seasonalY - offsetY > seasonalY + numberOfUpStage*2 && stage == 2 {
-                print("Stage 2")
-                stage++
+            if -offsetY > numberOfUpStage && -offsetY < numberOfUpStage*2 {
+                stage = .Two
             }
-            if seasonalY - offsetY > seasonalY + numberOfUpStage*3 && stage == 3 {
-                print("Stage 3")
-                stage++
+            if -offsetY > numberOfUpStage*2 && -offsetY < numberOfUpStage*3{
+                stage = .Three
             }
-            if seasonalY - offsetY > seasonalY + numberOfUpStage*4 && stage == 4 {
-                print("Stage 4")
-                stage++
+            if -offsetY > numberOfUpStage*3 && -offsetY < numberOfUpStage*4 {
+                stage = .Four
             }
-            if seasonalY - offsetY > seasonalY + numberOfUpStage*5 && stage == 5 {
-                print("Stage 5")
-                stage++
+            if -offsetY > numberOfUpStage*4 && -offsetY < numberOfUpStage*5 {
+                stage = .Five
             }
-            if seasonalY - offsetY > seasonalY + numberOfUpStage*6 && stage == 6 {
-                print("Stage 6")
-                stage = 1
+            if -offsetY > numberOfUpStage*5 {
+                stage = .Six
+            }
+            
+            switch stage {
+            case .One:
+                refreshView.backgroundColor = UIColor.lightGrayColor()
+            case .Two:
+                refreshView.backgroundColor = UIColor.darkGrayColor()
+            case .Three:
+                refreshView.backgroundColor = UIColor.blackColor()
+            case .Four:
+                refreshView.backgroundColor = UIColor.redColor()
+            case .Five:
+                refreshView.backgroundColor = UIColor.greenColor()
+            case .Six:
+                refreshView.backgroundColor = UIColor.blueColor()
             }
             
             if seasonalY - offsetY > 0 {
                 scrollView.contentOffset.y = 0
+                refreshView.backgroundColor = UIColor.lightGrayColor()
                 scrollView.scrollEnabled = false
                 scrollView.scrollEnabled = true
             }
-            
-            print(offsetY)
         }
     }
     
