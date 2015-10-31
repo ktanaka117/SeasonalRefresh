@@ -33,15 +33,15 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
         self.season = season
     }
     
-    func startRefreshing() {
+    private func startRefreshing() {
         
     }
     
-    func endRefreshing() {
+    private func endRefreshing() {
         
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    private func scrollViewDidScroll(scrollView: UIScrollView) {
         if let seasonalRefreshView = scrollView.viewWithTag(seasonalRefreshViewTag) {
             seasonalRefreshView.frame.origin.y = -heightOfSeasonalRefreshView
             
