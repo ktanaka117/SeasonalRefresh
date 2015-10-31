@@ -12,8 +12,10 @@ enum Season {
     case Halloween, Christmas, NewYear, Valentine
 }
 
+private var KVOContext = "RefresherKVOContext"
+private let ContentOffsetKeyPath = "contentOffset"
 
-class SeasonalRefresh: NSObject {
+class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     var season: Season?
     
     weak var scrollView: UIScrollView?
@@ -28,5 +30,26 @@ class SeasonalRefresh: NSObject {
     
     func endRefreshing() {
         
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+    }
+    
+    // MARK: -SeasonalRefreshViewDelegate
+    func seasonalRefreshViewWillMoveToSuperView(newSuperView: UIView?) {
+        scrollView?.removeObserver(self, forKeyPath: ContentOffsetKeyPath, context: &KVOContext)
+        if let scrollView = newSuperView as? UIScrollView {
+            scrollView.addObserver(self, forKeyPath: ContentOffsetKeyPath, options: .Initial, context: &KVOContext)
+        }
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if (context == &KVOContext && keyPath == ContentOffsetKeyPath && object as? UIScrollView == scrollView) {
+            scrollViewDidScroll(scrollView!)
+        }
+        else {
+            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        }
     }
 }

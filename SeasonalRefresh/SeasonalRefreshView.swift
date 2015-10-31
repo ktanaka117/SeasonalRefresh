@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol SeasonalRefreshViewDelegate {
+    func seasonalRefreshViewWillMoveToSuperView(newSuperView: UIView?)
+}
+
 class SeasonalRefreshView: UIView {
+    var delegate: SeasonalRefreshViewDelegate?
     
+    override func willMoveToSuperview(newSuperview: UIView?) {
+        delegate?.seasonalRefreshViewWillMoveToSuperView(newSuperview)
+    }
 }
