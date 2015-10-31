@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum Season {
+    case Halloween, Christmas, NewYear, Valentine
+}
+
 class SeasonalRefresh: UIView {
     
 }
