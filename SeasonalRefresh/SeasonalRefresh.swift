@@ -20,8 +20,8 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     
     weak var scrollView: UIScrollView?
     
-    var refreshView: SeasonalRefreshView?
-    var type: Season!
+    var refreshView: SeasonalRefreshView = SeasonalRefreshView()
+    var type: Season = .Halloween
     
     var action: (()->())?
     

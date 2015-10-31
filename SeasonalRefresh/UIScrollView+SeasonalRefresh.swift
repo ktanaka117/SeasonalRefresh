@@ -27,19 +27,19 @@ extension UIScrollView {
 //        }
         
         self.seasonalRefresh = SeasonalRefresh(season: season)
-        self.seasonalRefresh?.refreshView = SeasonalRefreshView()
-        self.seasonalRefresh?.refreshView?.delegate = seasonalRefresh
+        self.seasonalRefresh?.refreshView.delegate = seasonalRefresh
         self.seasonalRefresh!.scrollView = self
         self.seasonalRefresh!.action = action
         
         let view = seasonalRefresh!.refreshView
-        view?.frame = CGRectMake(0, -view!.frame.size.height, self.frame.size.width, view!.frame.size.height)
-        self.addSubview(view!)
-        self.sendSubviewToBack(view!)
+        view.frame = CGRectMake(0, 0, self.frame.size.width, 200)
+        view.backgroundColor = UIColor.redColor()
+        view.tag = seasonalRefreshViewTag
+        self.addSubview(view)
     }
     
     func removeSeasonalRefresh(seasonalRefresh: SeasonalRefresh) {
-        self.seasonalRefresh?.refreshView?.removeFromSuperview()
+        self.seasonalRefresh?.refreshView.removeFromSuperview()
         self.seasonalRefresh = nil
     }
     
