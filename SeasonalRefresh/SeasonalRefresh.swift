@@ -15,9 +15,6 @@ enum Season {
 private var KVOContext = "RefresherKVOContext"
 private let ContentOffsetKeyPath = "contentOffset"
 
-let maxStage = 6
-let numberOfUpStage: CGFloat = heightOfSeasonalRefreshView/CGFloat(maxStage)
-
 class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     var season: Season?
     
@@ -26,6 +23,8 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     var refreshView: SeasonalRefreshView = SeasonalRefreshView()
     var type: Season = .Halloween
     
+    let maxStage = 6
+    let numberOfUpStage: CGFloat = heightOfSeasonalRefreshView/6
     var stage = 1
     
     var action: (()->())?
