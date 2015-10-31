@@ -16,12 +16,12 @@ private var KVOContext = "RefresherKVOContext"
 private let ContentOffsetKeyPath = "contentOffset"
 
 class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
-    var season: Season?
+    
+    var season: Season = .Halloween
     
     weak var scrollView: UIScrollView?
     
     var refreshView: SeasonalRefreshView = SeasonalRefreshView()
-    var type: Season = .Halloween
     
     let maxStage = 6
     let numberOfUpStage: CGFloat = heightOfSeasonalRefreshView/6
