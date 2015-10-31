@@ -38,7 +38,7 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
+        print(scrollView.contentOffset)
     }
     
     // MARK: -SeasonalRefreshViewDelegate

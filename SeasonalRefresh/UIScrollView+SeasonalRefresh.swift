@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import ObjectiveC
+
+private var associatedObjectHandle: UInt8 = 0
 
 extension UIScrollView {
-    var seasonalRefresh: SeasonalRefresh? {
-        get { return self.seasonalRefresh }
-        set(newValue) { self.seasonalRefresh = newValue }
+    private var seasonalRefresh: SeasonalRefresh? {
+        get {
+            return objc_getAssociatedObject(self, &associatedObjectHandle) as? SeasonalRefresh
+        }
+        set {
+            objc_setAssociatedObject(self, &associatedObjectHandle, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
     }
     
     func addSeasonalRefresh(season: Season, action: ()->()) {
