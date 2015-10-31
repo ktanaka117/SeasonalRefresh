@@ -43,7 +43,9 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
     
     // MARK: -SeasonalRefreshViewDelegate
     func seasonalRefreshViewWillMoveToSuperView(newSuperView: UIView?) {
-        scrollView?.removeObserver(self, forKeyPath: ContentOffsetKeyPath, context: &KVOContext)
+//        if scrollView?.observationInfo != nil {
+//            scrollView?.removeObserver(self, forKeyPath: ContentOffsetKeyPath, context: &KVOContext)
+//        }
         if let scrollView = newSuperView as? UIScrollView {
             scrollView.addObserver(self, forKeyPath: ContentOffsetKeyPath, options: .Initial, context: &KVOContext)
         }
