@@ -50,24 +50,25 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
             seasonalRefreshView.frame.origin.y = -heightOfSeasonalRefreshView
             
             let seasonalY = seasonalRefreshView.frame.origin.y
-            let offsetY = scrollView.contentOffset.y
+            // Multiplying minus to compare with numberOfUpStage.
+            let offsetY = -scrollView.contentOffset.y
             
-            if -offsetY > 0 && -offsetY < numberOfUpStage {
+            if offsetY > 0 && offsetY < numberOfUpStage {
                 stage = .One
             }
-            if -offsetY > numberOfUpStage && -offsetY < numberOfUpStage*2 {
+            if offsetY > numberOfUpStage && offsetY < numberOfUpStage*2 {
                 stage = .Two
             }
-            if -offsetY > numberOfUpStage*2 && -offsetY < numberOfUpStage*3{
+            if offsetY > numberOfUpStage*2 && offsetY < numberOfUpStage*3 {
                 stage = .Three
             }
-            if -offsetY > numberOfUpStage*3 && -offsetY < numberOfUpStage*4 {
+            if offsetY > numberOfUpStage*3 && offsetY < numberOfUpStage*4 {
                 stage = .Four
             }
-            if -offsetY > numberOfUpStage*4 && -offsetY < numberOfUpStage*5 {
+            if offsetY > numberOfUpStage*4 && offsetY < numberOfUpStage*5 {
                 stage = .Five
             }
-            if -offsetY > numberOfUpStage*5 {
+            if offsetY > numberOfUpStage*5 {
                 stage = .Six
             }
             
