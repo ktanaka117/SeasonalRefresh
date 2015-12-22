@@ -8,7 +8,7 @@
 
 import UIKit
 
-let heightOfSeasonalRefreshView: CGFloat = 200
+let heightOfSeasonalRefreshView: CGFloat = 130
 
 protocol SeasonalRefreshViewDelegate: class {
     func seasonalRefreshViewWillMoveToSuperView(newSuperView: UIView?)
