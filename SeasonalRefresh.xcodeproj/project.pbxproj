@@ -47,6 +47,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		299465331C294A7800232990 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				299465351C294AB500232990 /* Christmas */,
+				299465341C294AAF00232990 /* Halloween */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		299465341C294AAF00232990 /* Halloween */ = {
+			isa = PBXGroup;
+			children = (
+				29567EF51BE515000011BDB0 /* FireClock.sks */,
+				29567EF61BE515000011BDB0 /* spark.png */,
+			);
+			name = Halloween;
+			sourceTree = "<group>";
+		};
+		299465351C294AB500232990 /* Christmas */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Christmas;
+			sourceTree = "<group>";
+		};
 		29FD7C1D1BE45AE400D0B29D = {
 			isa = PBXGroup;
 			children = (
@@ -72,8 +97,7 @@
 				29567EF11BE485700011BDB0 /* UIScrollView+SeasonalRefresh.swift */,
 				29FD7C591BE46B7500D0B29D /* SeasonalRefresh.swift */,
 				29567EF31BE48ABD0011BDB0 /* SeasonalRefreshView.swift */,
-				29567EF51BE515000011BDB0 /* FireClock.sks */,
-				29567EF61BE515000011BDB0 /* spark.png */,
+				299465331C294A7800232990 /* Resources */,
 				29FD7C2D1BE45AE400D0B29D /* Main.storyboard */,
 				29FD7C301BE45AE400D0B29D /* Assets.xcassets */,
 				29FD7C321BE45AE400D0B29D /* LaunchScreen.storyboard */,
