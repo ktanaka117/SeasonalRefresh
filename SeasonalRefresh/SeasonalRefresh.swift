@@ -37,12 +37,12 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
         self.season = season
     }
     
-    private func startRefreshing() {
-        
+    func startRefreshing() {
+        action?()
     }
     
-    private func endRefreshing() {
-        
+    func endRefreshing() {
+        reset()
     }
     
     private func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -87,16 +87,20 @@ class SeasonalRefresh: NSObject, SeasonalRefreshViewDelegate {
                 refreshView.backgroundColor = UIColor.blueColor()
             }
             
-            if seasonalY - offsetY > 0 {
-                UIView.animateWithDuration(0.2, animations: {
-                    scrollView.contentOffset.y = 0
-                })
-                scrollView.scrollEnabled = false
-                scrollView.scrollEnabled = true
-                stage = .One
-                refreshView.backgroundColor = UIColor.lightGrayColor()
+            if seasonalY + offsetY > 0 {
+                startRefreshing()
             }
         }
+    }
+    
+    private func reset() {
+        UIView.animateWithDuration(0.3, animations: {
+            self.scrollView?.contentOffset.y = 0
+        })
+        scrollView?.scrollEnabled = false
+        scrollView?.scrollEnabled = true
+        stage = .One
+        refreshView.backgroundColor = UIColor.lightGrayColor()
     }
     
     // MARK: -SeasonalRefreshViewDelegate

@@ -18,7 +18,11 @@ class ViewController: UITableViewController {
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         tableView.addSeasonalRefresh(.Halloween, action: { [weak self] in
+            for var i = 0; i < 10000; i++ {
+                print(i)
+            }
             
+            self?.tableView.seasonalRefresh?.endRefreshing()
         })
     }
     

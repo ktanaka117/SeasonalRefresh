@@ -13,7 +13,7 @@ private var associatedObjectHandle: UInt8 = 0
 let seasonalRefreshViewTag = 98789
 
 extension UIScrollView {
-    private var seasonalRefresh: SeasonalRefresh? {
+    var seasonalRefresh: SeasonalRefresh? {
         get {
             return objc_getAssociatedObject(self, &associatedObjectHandle) as? SeasonalRefresh
         }
